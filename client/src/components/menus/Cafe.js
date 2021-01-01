@@ -1,7 +1,9 @@
 import { Component } from 'react';
 import axios from 'axios';
 import MenuForm from './MenuForm';
-import { Menu } from 'semantic-ui-react';
+// import { Menu } from 'semantic-ui-react';
+import MenuList from './MenuList';
+
 class Cafe extends Component {
   state = { menus: [] }
   componentDidMount() {
@@ -36,10 +38,12 @@ class Cafe extends Component {
     // delete in the state
   }
   render() {
+    const { menus } =this.state
     return(
       <>
         <h1>Cafe</h1>
         <MenuForm addMenu={this.addMenu} />
+        <MenuList menus={menus} />
       </>
     )
   }
