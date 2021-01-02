@@ -5,11 +5,15 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import 'semantic-ui-css/semantic.min.css';
 import { BrowserRouter } from 'react-router-dom';
+import MenuProvider from './providers/MenuProvider';
 ReactDOM.render(
   <React.StrictMode>
+    <MenuProvider>
     <BrowserRouter>
       <App />
     </BrowserRouter>
+      </MenuProvider>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );

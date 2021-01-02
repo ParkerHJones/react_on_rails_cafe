@@ -6,7 +6,7 @@ import axios from 'axios';
 
 
 class Menu extends Component {
-    state = { id:0, title: '', create_at: '', updated}
+    state = { id:0, title: '', create_at: '', updated_at: ''}
 
 
     componentDidMount() {
