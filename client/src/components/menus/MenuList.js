@@ -1,4 +1,5 @@
 import { List } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 const MenuList = ({ menus }) => (
 
@@ -9,7 +10,11 @@ const MenuList = ({ menus }) => (
 <List.Item>
 <List.Icon name='github' size='large' verticalAlign='middle' />
 <List.Content>
-<List.Header as='a'>{m.title}</List.Header>
+<List.Header>
+    <Link to={`/menu/${m.id}`}>
+     {m.title}
+     </Link>
+     </List.Header>
 <List.Description as='a'>{m.updated_at}</List.Description>
 </List.Content>
 </List.Item>
