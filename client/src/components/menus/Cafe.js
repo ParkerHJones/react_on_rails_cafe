@@ -5,6 +5,7 @@ import MenuForm from './MenuForm';
 import MenuList from './MenuList';
 import { MenuConsumer } from '../../providers/MenuProvider';
 
+
 const Cafe = ({}) => (
   <MenuConsumer>
     { value => (

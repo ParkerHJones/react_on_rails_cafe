@@ -34,12 +34,27 @@ class MenuProvider extends Component {
             })
         }
         updateMenu = (id, menu) => {
-          // update to the db
-          // update to the state
+          axios.put(`/api/menus/${id}`, { menu })
+          .then( res => {
+            const menus = this.state.menus.map( m => {
+                if(m.id === id) {
+                    return res.data 
+                }
+                return m 
+            })
+            this.setState({ menus })
+          })
+          .catch( err => {
+              console.log(err);
+          })
         }
         deleteMenu = (id) => {
-          // delete in the db
-          // delete in the state
+          axios.delete(`/api/menus/${id}`)
+          .then( res => {
+              const { menus } = this.state
+              this.setState({ menus: menus.filter( m => m.id !== id)})
+              window.location.href = '/cafe'
+          })
         }
 
     render() {
